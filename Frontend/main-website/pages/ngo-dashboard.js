@@ -21,7 +21,8 @@ const NgoDashboard = () => {
             body: JSON.stringify({ area })
         };
 
-        fetch("https://khanakhazana-backend.onrender.com/api/ngo/findRes", requestOptions)
+        // fetch("https://khanakhazana-backend.onrender.com/api/ngo/findRes", requestOptions)
+        fetch("http://localhost:3001/api/ngo/findRes", requestOptions)
             .then(response => response.text())
             .then(result => {
                 setLoading(false);

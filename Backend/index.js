@@ -3,6 +3,7 @@ const app= express();
 const dotenv=require('dotenv');
 const port = process.env.PORT || 3001;
 const mongoose=require('mongoose');
+const cors = require('cors')
 
 //IMPORT ROUTES
 const authRoute=require('./routes/auth');
@@ -15,7 +16,7 @@ const ngoDetailsRoute=require('./routes/ngoDetails');
 const orderDoneRoute=require('./routes/orderDone');
 const downloadRoute=require('./routes/download');
 const postRoute=require('./routes/posts');
-const cors = require("cors");
+// const cors = require("cors");
 dotenv.config();
 
 //Connect to DB
@@ -30,12 +31,13 @@ catch (error) {
 
 //MIDDLEWARES
 app.use(express.json());
+app.use(cors())
 
-var corsOptions = {
-  origin: ["https://khana-khazana-nine.vercel.app","https://khana-khazana.ayushtyagi14.repl.co"],
-};
+// var corsOptions = {
+//   origin: ["https://khana-khazana-nine.vercel.app","https://khana-khazana.ayushtyagi14.repl.co"],
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 // ROUTE MIDDLESWARES
 app.use('/api/user',authRoute);

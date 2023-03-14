@@ -12,8 +12,8 @@ const Login = () => {
     const [isRes, setIsRes] = useState(false);
 
     const [formData, setFormData] = useState({
-        email: '',
-        password: '',
+        email: 'Hehe',
+        password: '123',
     });
 
     const handleInputChange = (event) => {
@@ -133,7 +133,7 @@ const Login = () => {
                                 required
                             />
                             <span className="text-sm my-2 text-blue-800 cursor-pointer"
-                            // onClick={() => router.push('/forgot_password')}
+                                onClick={() => router.push('/forgot_password')}
                             >
                                 Forgot password?
                             </span>
